@@ -1,5 +1,98 @@
 <!-- <app-component-test></app-component-test> -->
 <!-- <app-component-overview-by-manually></app-component-overview-by-manually> -->
 
-<router-outlet></router-outlet>
+
+<!-- {{name}} -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+<input type="text" [value]="user.name">
+
+<button type="button" (click)="handler()">Click me</button>
+<br><br>
+<input type="text" [ngModel] = "name" (ngModelChange)= "name = $event"/> -->
+
+<!--
+<ng-template [ngIf]="user.age >= 18" [ngIfElse]="under18">
+  <hello *ngIf="user.age >= 18;else under18" [name]= "user.name"></hello>
+</ng-template>
+
+<ng-template #under18>
+  <div>
+      You are too young to see this content
+  </div>
+</ng-template> -->
+<!-- <div *ngIf="user.age < 18">
+  You are too young to see this content
+</div> -->
+<!--
+<button (click)="user.age = user.age - 1">-</button>
+Age: {{user.age}}
+<button (click)="user.age = user.age + 1">+</button> -->
+
+<!-- -----------------------------------------------------
+// cách để sử dụng if lòng for
+<ul>
+  <ng-container *ngIf="user1.length > 0;else NoUser">
+    <li *ngFor="let u of user1; index as idx; count as tatol; first as isFirst;
+  last as isLast;even as isEven;odd as isOdd">
+    <span>{{u.name}} - {{u.id}} - {{u.phone}}</span>
+    <br>
+    <span>at index {{idx}} out of {{tatol}}</span>
+    <br>
+    <span *ngIf="isEven"> I am even number</span>
+    <br>
+    <span *ngIf="isOdd"> I am odd number</span>
+    <br>
+    <span *ngIf="isLast"> I am last</span>
+    <br>
+    <span *ngIf="isFirst"> I am first</span>
+    <br><br><br>
+  </li>
+  </ng-container>
+<ng-template #NoUser>
+No user</ng-template>
+</ul>
+<ul>
+
+  //Cú pháp viết theo ng-template
+  -------------------------------------------------------------------------------------
+  <ng-template ngFor [ngForOf] = "user1" let-u let-idx = "index" let-tatol = "count"
+  let-isFirst = "first" let-isLast = "last" let-isEven = "even" let-isOdd = "odd">
+<li>
+  <span>{{u.name}} - {{u.id}} - {{u.phone}}</span>
+    <br>
+    <span>at index {{idx}} out of {{tatol}}</span>
+    <br>
+    <span *ngIf="isEven"> I am even number</span>
+    <br>
+    <span *ngIf="isOdd"> I am odd number</span>
+    <br>
+    <span *ngIf="isLast"> I am last</span>
+    <br>
+    <span *ngIf="isFirst"> I am first</span>
+    <br><br><br>
+</li>
+  </ng-template>
+</ul> -->
+<!--
+<button (click)="isDanger = !isDanger">Toogle Danger</button>
+<br><br>
+<button (click)="isWarning = !isWarning">Toogle Warning</button>
+<br>
+<div class="box" [class.red-border] = "isDanger" [class.yellow-background] = "isWarning"></div>
+
+
+<div [class]="classes"></div>
+
+<p [style.color]="'red'" [style.backgroundColor]="'yellow'"  [style.fontSize.rem]="2">
+Start editing to see some magic happen.
+</p> -->
+
+<progress-bar></progress-bar>
+
+<button (click)="currentProgress = currentProgress +1 "> Increase Progress</button>
+<br>
+<progress-bar [progress]="currentProgress" [progressColor]="'dodgerblue'"></progress-bar>
 
