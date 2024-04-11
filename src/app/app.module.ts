@@ -9,7 +9,9 @@ import { ComponentHomeComponent } from './component-home/component-home.componen
 import { FormsModule } from '@angular/forms';
 import { HelloComponent } from './hello.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-
+import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { AuthorListComponent } from './author-details/author-list.component';
+import { ToggleComponent } from './toggle/toggle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,10 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     ComponentOvervierByManually,
     ComponentHomeComponent,
     HelloComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    AuthorDetailsComponent,
+    AuthorListComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,

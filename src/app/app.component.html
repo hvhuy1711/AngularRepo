@@ -90,9 +90,27 @@ No user</ng-template>
 Start editing to see some magic happen.
 </p> -->
 
-<progress-bar></progress-bar>
+<!-- <progress-bar></progress-bar>
 
 <button (click)="currentProgress = currentProgress +1 "> Increase Progress</button>
 <br>
-<progress-bar [progress]="currentProgress" [progressColor]="'dodgerblue'"></progress-bar>
+<progress-bar [progress]="currentProgress" [progressColor]="'dodgerblue'"></progress-bar> -->
 
+
+<!-- <app-author-list></app-author-list> -->
+
+<hello name="{{name}}"></hello>
+<input #nameInput type="text" [(ngModel)] = name>
+
+<button (click)="showLast = !showLast">Toggle show last</button>
+
+<app-toggle [(checked)]="isChecked"></app-toggle>
+<app-toggle [(checked)]="isChecked"></app-toggle>
+<app-toggle [(checked)]="isChecked"></app-toggle>
+
+<ng-container *ngIf="showLast" >
+  <app-toggle [(checked)]="isChecked"></app-toggle>
+</ng-container>
+
+
+<button #toggleButton>Toggle me</button>

@@ -1,4 +1,5 @@
-import { Component, VERSION, Version } from '@angular/core';
+import { Component, ElementRef, QueryList, VERSION, Version, ViewChild, ViewChildren, viewChildren } from '@angular/core';
+import { ToggleComponent } from './toggle/toggle.component';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,44 @@ import { Component, VERSION, Version } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  showLast = true;
+  // @ViewChild(ToggleComponent, {static:true}) toggleComp: ToggleComponent | undefined;// dùng khi có 1 cái
+  @ViewChildren(ToggleComponent) toggleComps:QueryList<ToggleComponent> | undefined;
+  @ViewChild('nameInput' , {static: true}) nameInput  : ElementRef<HTMLInputElement> | undefined;
 
-  currentProgress = 70;
+  ngAfterViewInit() {
+    // console.log(this.toggleComps);
+    this.toggleComps?.changes.subscribe(console.log);
+
+  }
+
+
+  ngOnInit(){
+    // setTimeout(() => {
+    //   this.nameInput?.nativeElement.focus();
+    // }, 3000);//sử dụng khi có ViewChild
+    console.log(this.nameInput);
+    // console.log("onInit",this.toggleComp);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  isChecked =  true;
+
+  // currentProgress = 70;
 
   name = 'Angular '  + VERSION.major;
   title = 'projectName';
