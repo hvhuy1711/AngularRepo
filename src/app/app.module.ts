@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AuthorListComponent } from './author-details/author-list.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { TabComponent } from './tab.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,16 +26,11 @@ import { ToggleComponent } from './toggle/toggle.component';
     ProgressBarComponent,
     AuthorDetailsComponent,
     AuthorListComponent,
-    ToggleComponent
+    ToggleComponent,
+    TabComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
