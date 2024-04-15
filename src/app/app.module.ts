@@ -16,6 +16,9 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
 import { AuthorListComponent } from './author-details/author-list.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { TabComponent } from './tab.component';
+import { HomecomponentComponent } from './home/homecomponent/homecomponent.component';
+import { ArticleDetailComponent } from './article-detail/article-detail/article-detail.component';
+import { ArticleModule } from './articles/articles.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,8 @@ import { TabComponent } from './tab.component';
     AuthorListComponent,
     ToggleComponent,
     TabComponent,
+    HomecomponentComponent,
+    // ArticleModule,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],

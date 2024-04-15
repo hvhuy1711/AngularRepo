@@ -16,6 +16,8 @@ import { ToggleComponent } from './toggle/toggle.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  title = 'ng-router';
+
   navs = ['Active', 'link 1', 'link 2'];
 
   counter = 1;
@@ -52,7 +54,7 @@ export class AppComponent {
   // currentProgress = 70;
 
   name = 'Angular ' + VERSION.major;
-  title = 'projectName';
+  // title = 'projectName';
 
   isDanger = false;
   isWarning = false;

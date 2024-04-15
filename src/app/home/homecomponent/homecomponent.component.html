@@ -1,0 +1,17 @@
+<p>homecomponent works!</p>
+<ul>
+  <li
+    *ngFor="let artcle of articles$ | async"
+    style="border: 1px solid black; padding: 20px; margin-bottom: 10px"
+  >
+    {{ artcle.title }}
+    <br />
+    <!-- {{ artcle.body }} -->
+    <!-- <a [routerLink]="['/detail', artcle.slug]">Read more</a> -->
+    <a
+      style="cursor: pointer; text-decoration: underline"
+      (click)="onReadMoreClick(artcle.slug)"
+      >Read more</a
+    >
+  </li>
+</ul>
