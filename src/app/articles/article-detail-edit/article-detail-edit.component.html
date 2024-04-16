@@ -1,0 +1,9 @@
+<!-- <p>article-detail-edit works!</p> -->
+
+<form [formGroup]="form$ | async">
+  <label for="title">Title</label>
+  <input type="text" id="title" formControlName="title" />
+  <br /><br />
+  <label for="body">Body</label>
+  <textarea id="body" formControlName="body"></textarea>
+</form>

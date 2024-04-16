@@ -17,7 +17,6 @@ import { AuthorListComponent } from './author-details/author-list.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { TabComponent } from './tab.component';
 import { HomecomponentComponent } from './home/homecomponent/homecomponent.component';
-import { ArticleDetailComponent } from './article-detail/article-detail/article-detail.component';
 import { ArticleModule } from './articles/articles.module';
 @NgModule({
   declarations: [
@@ -32,9 +31,8 @@ import { ArticleModule } from './articles/articles.module';
     ToggleComponent,
     TabComponent,
     HomecomponentComponent,
-    // ArticleModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ArticleModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

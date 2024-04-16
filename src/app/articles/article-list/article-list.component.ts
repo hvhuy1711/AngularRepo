@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Article } from '../../../modelss/artcle';
-import { ArticleService } from '../../../servicess/article.service';
+import { Article } from '../../modelss/artcle';
 import { Router } from '@angular/router';
+import { ArticleService } from '../../servicess/article.service';
 
 @Component({
   selector: 'app-article-list',
@@ -19,6 +19,9 @@ export class ArticleListComponent {
     this.articles$ = this.ArticleService.article$;
   }
   onReadMoreClick(slug: string) {
-    this.router.navigate(['/detail', slug]);
+    this.router.navigate(['/articles', slug]);
+  }
+  onEditClick(slug: string) {
+    this.router.navigate(['/articles', slug, 'edit']);
   }
 }

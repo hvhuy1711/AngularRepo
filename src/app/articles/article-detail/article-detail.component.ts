@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../servicess/article.service';
 import { Observable, filter, switchMap } from 'rxjs';
-import { pluck } from 'rxjs/operators';
 
 import { Article } from '../../modelss/artcle';
 

@@ -11,15 +11,14 @@ import { Router } from '@angular/router';
   styleUrl: './homecomponent.component.css',
 })
 export class HomecomponentComponent implements OnInit {
-  articles$: Observable<Article[]> | undefined;
-  constructor(
-    private readonly articleService: ArticleService,
-    private readonly router: Router
-  ) {}
+  // articles$: Observable<Article[]> | undefined;
+  constructor() // private readonly articleService: ArticleService,
+  // private readonly router: Router
+  {}
   ngOnInit(): void {
-    this.articles$ = this.articleService.article$;
+    // this.articles$ = this.articleService.article$;
   }
-  onReadMoreClick(slug: string) {
-    this.router.navigate(['/detail', slug]);
-  }
+  // onReadMoreClick(slug: string) {
+  //   this.router.navigate(['/detail', slug]);
+  // }
 }
