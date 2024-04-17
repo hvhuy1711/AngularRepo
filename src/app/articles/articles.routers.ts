@@ -12,7 +12,11 @@ export const articlesRoutes: Routes = [
     canActivateChild: [ArticlesGaurd],
     children: [
       { path: '', component: ArticleDetailComponent },
-      { path: 'edit', component: ArticleDetailEditComponent },
+      {
+        path: 'edit',
+        component: ArticleDetailEditComponent,
+        canDeactivate: [ArticlesGaurd],
+      },
     ],
   },
 ];

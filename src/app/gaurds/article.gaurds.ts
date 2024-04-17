@@ -10,15 +10,23 @@ import {
   MaybeAsync,
   Route,
   UrlSegment,
+  CanDeactivate,
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../servicess/auth.service';
+import { CheckDeactivate } from '../check-CanDeactivate';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ArticlesGaurd implements CanActivate, CanActivateChild, CanLoad {
+export class ArticlesGaurd
+  implements
+    CanActivate,
+    CanActivateChild,
+    CanLoad,
+    CanDeactivate<CheckDeactivate>
+{
   constructor(private readonly authService: AuthService) {}
 
   canActivate(
@@ -44,5 +52,14 @@ export class ArticlesGaurd implements CanActivate, CanActivateChild, CanLoad {
 
   canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> {
     return this.authService.currentUser.pipe(map((user) => !!user));
+  }
+
+  canDeactivate(
+    component: CheckDeactivate,
+    currentRoute: ActivatedRouteSnapshot,
+    currentState: RouterStateSnapshot,
+    nextState: RouterStateSnapshot
+  ): Observable<boolean> {
+    return component.checkDeactivate(currentRoute, currentState, nextState);
   }
 }

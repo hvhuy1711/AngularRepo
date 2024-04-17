@@ -6,6 +6,8 @@ import { HomecomponentComponent } from './home/homecomponent/homecomponent.compo
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { features } from 'process';
 import { ArticlesGaurd } from './gaurds/article.gaurds';
+import { SignInComponent } from './sign-in/sign-in/sign-in.component';
+import { SignInRfComponent } from './sign-in-rf/sign-in-rf.component';
 // import { environment } from '@angular/environment';
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
     },
     canLoad: [ArticlesGaurd],
   },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-in-rf', component: SignInRfComponent },
 ];
 
 @NgModule({

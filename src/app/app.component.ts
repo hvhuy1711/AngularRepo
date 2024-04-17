@@ -9,6 +9,7 @@ import {
   viewChildren,
 } from '@angular/core';
 import { ToggleComponent } from './toggle/toggle.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,18 @@ import { ToggleComponent } from './toggle/toggle.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  userInfo = {
+    userName: 'tiepphan',
+    password: '',
+    rememberMe: true,
+  };
+  passwordPattern = /^(?=.*[!@#$%^&*]+)[a-z0-9!@#$%^&*]{6,32}$/;
+  usernamePattern = /^[a-z]{6,32}$/i;
+  // username: any;
+
+  onSubmit(form: NgForm): void {
+    console.log(form);
+  }
   title = 'ng-router';
 
   navs = ['Active', 'link 1', 'link 2'];
